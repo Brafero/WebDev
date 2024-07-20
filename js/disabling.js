@@ -4,7 +4,7 @@
 	    * For full source code, visit https://mycyberuniverse.com
 	    * https://mycyberuniverse.com/developing/disabling-right-clicking-by-using-javascript.html
 	    */
-	  window.onload = function() {
+	window.onload = function() {
 	    document.addEventListener("contextmenu", function(e){
 	      e.preventDefault();
 	    }, false);
