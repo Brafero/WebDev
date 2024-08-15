@@ -27,37 +27,70 @@
 
     <main id="conteudo">
         <!-- indica que é o conteúdo principal dessa página -->
+        <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="Imagens/eleicoes.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+          </div>
+        
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="Imagens/snct.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+          </div>
+        
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="Imagens/residencia.png" style="width:100%">
+            <div class="text">Caption Three</div>
+          </div>
 
-        <div class="grid-container">
-            <div class="grid-item">
-                <figure>
-                    <img src="Imagens/eleicoes.jpg" alt="Eleições" width="50%" height="50%">
-                </figure>
-                <br /><strong>Radar IFSP: informe-se sobre as eleições do dia 13 de outubro</strong>
-                <br />Todos os alunos e servidores podem votar; acesse aqui a cabine de votação online do seu câmpus
-            </div>
-            <div class="grid-item">
-                <figure>
-                    <img src="Imagens/snct.jpg" alt="SNCT" width="50%" height="50%">
-                </figure>
-                <br /><strong>IFSP: SNCT reúne atividades entre 19 e 24 de outubro</strong>
-                <br />Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais
-            </div>
-            <div class="grid-item">
-                <figure>
-                    <img src="Imagens/residencia.png" alt="Residência" width="50%" height="50%">
-                </figure>
-                <br /><strong>IFSP oferece bolsa aos voluntários da Residência Pedagógica</strong>
-                <br />Bolsa de R$ 400,00 será paga pelo período de três meses
-            </div>
-            <div class="grid-item">
-                <figure>
-                    <img src="Imagens/maratona.jpeg" alt="Maratona" width="50%" height="50%">
-                </figure>
-                <br /><strong>Inscrições abertas para a III Maratona InterIF</strong>
-                <br />Maratona de programação do IFSP será realizada online, no dia 31 de outubro; inscrições até 26 de outubro
-            </div>
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 3</div>
+            <img src="Imagens/maratona.jpeg" style="width:100%">
+            <div class="text">Caption Four</div>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+
+        
 
         <section>
             <h1>Conheça os desafios de inovação - IFSP</h1>
